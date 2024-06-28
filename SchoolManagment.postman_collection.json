@@ -1,0 +1,723 @@
+{
+	"info": {
+		"_postman_id": "8bba16b0-3ed3-418c-ba4c-e1030f67d709",
+		"name": "SchoolManagment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34850646"
+	},
+	"item": [
+		{
+			"name": "class",
+			"item": [
+				{
+					"name": "create-class",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"class Eleven\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/class/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"class",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all classes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/class/?name=nine",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"class",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page_size",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "nine"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-class-by-id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/class/2/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"class",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update class",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Class Eleven U\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/class/3/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"class",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-class",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/class/3/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"class",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "get-all-course",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							},
+							{
+								"key": "name",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/course/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"course",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "math",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get course by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/course/1/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"course",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Math\",\n    \"classes\":[1,2],\n    \"teachers\":[4]\n\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/course/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"course",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-course",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/course/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"course",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/course/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"course",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "student enrollment",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{student}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student\":5,\n    \"class_obj\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/enrollments/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"enrollments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieving a student's enrolled courses for a specific class.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{student}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/students_courses_for_specfic_class/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"students_courses_for_specfic_class",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{student}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/enrollments/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"enrollments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "specfic-class_course_marks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{student}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/student-marks/?class_id=1&course_id=2",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"student-marks",
+								""
+							],
+							"query": [
+								{
+									"key": "class_id",
+									"value": "1"
+								},
+								{
+									"key": "course_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "marks",
+			"item": [
+				{
+					"name": "create-marks",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{student}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student\":5,\n    \"course\":2,\n    \"teacher\":4,\n    \"class_obj\":1,\n    \"mark\":79\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/marks/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"marks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-marks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/marks/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"marks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-marks-by-id-and update",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tecaher}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mark\":\"90\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/marks/2/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"marks",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user_login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"admin\",\n    \"password\":1234\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\":\"test teacher\",\n    \"last_name\":\"s\",\n    \"username\":\"testT\",\n    \"email\":\"testT@gmail.com\",\n    \"password\":1234,\n    \"role\":\"teacher\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-user details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{student}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}api/get_user/",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"get_user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_user",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{student}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\":\"ali update\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/get_user/",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"get_user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all teachers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{admin}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}api/get_all_users/",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"get_all_users",
+						""
+					],
+					"query": [
+						{
+							"key": "role",
+							"value": "teacher",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "first_name",
+							"value": "sher",
+							"disabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "khan",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "tests@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "testt",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
